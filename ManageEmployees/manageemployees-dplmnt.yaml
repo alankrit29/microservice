@@ -5,8 +5,8 @@ metadata:
     deployment.kubernetes.io/revision: "1"
   generation: 1
   labels:
-    app: greeting-dplmnt
-  name: greeting-dplmnt
+    app: manageemployees-dplmnt
+  name: manageemployees-dplmnt
   namespace: default
 spec:
   progressDeadlineSeconds: 600
@@ -14,7 +14,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: greeting-dplmnt
+      app: manageemployees-dplmnt
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -24,12 +24,12 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: greeting-dplmnt
+        app: manageemployees-dplmnt
     spec:
       containers:
       - image: localhost:5000/manageemployees:${IMAGE_TAG}
         imagePullPolicy: IfNotPresent
-        name: greeting
+        name: manageemployees
         ports:
         - containerPort: 9090
           protocol: TCP
